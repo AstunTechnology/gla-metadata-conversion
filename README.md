@@ -4,7 +4,7 @@
 
 Clone or otherwise download this repository and extract `gla_wms_gemini.xsl`. Place it the following location:
 
-* `iso19139\process`
+* `schemas/iso19139/src/main/plugin/iso19139/process/gla_wms_gemini.xsl`
 
 ## Setting up the harvest
 
@@ -30,7 +30,7 @@ Set up the harvest as above. Save and harvest the records.
 
 ### Add the directive to the batch processing config
 
-Edit the file `catalog\config\batch-process-cfg.json` and add the following entry:
+Edit the file `web-ui/src/main/resources/catalog/config/batch-process-cfg.json` and add the following entry:
 
 	{
 	"key": "gla_wms_gemini",
@@ -40,7 +40,7 @@ Edit the file `catalog\config\batch-process-cfg.json` and add the following entr
 
 Note that the key must exactly match the name of the xsl.
 
-To provide a translated label for the process, edit `catalog\locale\en-custom.json` and add the following:
+To provide a translated label for the process, edit `web/target/geonetwork/catalog/locales/en-custom.json` and add the following:
 
 	"gla_wms_gemini": "Convert GLA WMS to Gemini"
 
