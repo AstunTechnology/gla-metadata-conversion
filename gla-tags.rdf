@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:ns3="http://purl.org/dc/elements/1.1/"
+	xmlns:ns5="http://www.opengis.net/gml#"
+	xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+<rdf:Description rdf:about="http://geonetwork-opensource.org/GLA tags">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<ns3:title>GLA tags</ns3:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://gla.gov.uk/tags#310d519e-2854-4869-8f18-59400d0fbc4f">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="en">unitary</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">unitary</ns2:scopeNote>
+	<ns5:BoundedBy rdf:nodeID="node1drarn70lx1"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1drarn70lx1">
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+	<ns5:lowerCorner> </ns5:lowerCorner>
+	<ns5:upperCorner> </ns5:upperCorner>
+	<ns5:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://gla.gov.uk/tags#a24ce231-25e5-4ceb-b6a4-4bb540f8c3fa">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="en">LB</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">LB</ns2:scopeNote>
+	<ns5:BoundedBy rdf:nodeID="node1drarngaux1"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1drarngaux1">
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+	<ns5:lowerCorner> </ns5:lowerCorner>
+	<ns5:upperCorner> </ns5:upperCorner>
+	<ns5:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://gla.gov.uk/tags#86ecae57-99bc-488a-8abe-318c2c5e48eb">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="en">MapLondon</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">MapLondon</ns2:scopeNote>
+	<ns5:BoundedBy rdf:nodeID="node1drarnt8ex1"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1drarnt8ex1">
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+	<ns5:lowerCorner> </ns5:lowerCorner>
+	<ns5:upperCorner> </ns5:upperCorner>
+	<ns5:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://gla.gov.uk/tags#74b17b72-683d-4f89-b4ca-5d52926a29b6">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="en">LAQN</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">LAQN</ns2:scopeNote>
+	<ns5:BoundedBy rdf:nodeID="node1drarp1ncx1"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1drarp1ncx1">
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+	<ns5:lowerCorner> </ns5:lowerCorner>
+	<ns5:upperCorner> </ns5:upperCorner>
+	<ns5:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://gla.gov.uk/tags#a8b87b31-466d-4ba0-acbc-a6882b469b94">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="en">airqualitymap</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">airqualitymap</ns2:scopeNote>
+	<ns5:BoundedBy rdf:nodeID="node1drarpk7jx1"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1drarpk7jx1">
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+	<ns5:lowerCorner> </ns5:lowerCorner>
+	<ns5:upperCorner> </ns5:upperCorner>
+	<ns5:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://gla.gov.uk/tags#f5729103-a907-4a5b-ac46-26793ed47cf8">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="en">hex</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">hex</ns2:scopeNote>
+	<ns5:BoundedBy rdf:nodeID="node1drarr7asx1"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1drarr7asx1">
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+	<ns5:lowerCorner> </ns5:lowerCorner>
+	<ns5:upperCorner> </ns5:upperCorner>
+	<ns5:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+</rdf:RDF>

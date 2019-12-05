@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:ns3="http://purl.org/dc/elements/1.1/"
+	xmlns:ns5="http://www.opengis.net/gml#"
+	xmlns:ns2="http://www.w3.org/2004/02/skos/core#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+<rdf:Description rdf:about="http://geonetwork-opensource.org/GLA Topics">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+	<ns3:title>GLA Topics</ns3:title>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://gla.gov.uk/topics#8a055313-5b62-47ad-9a60-8bc62674d46d">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="en">Planning</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">planning</ns2:scopeNote>
+	<ns5:BoundedBy rdf:nodeID="node1drarltf6x1"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1drarltf6x1">
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+	<ns5:lowerCorner> </ns5:lowerCorner>
+	<ns5:upperCorner> </ns5:upperCorner>
+	<ns5:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://gla.gov.uk/topics#bb4deadd-aca6-44be-a37e-f0307832e537">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="en">Environment</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">Environment</ns2:scopeNote>
+	<ns5:BoundedBy rdf:nodeID="node1drarq2slx1"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1drarq2slx1">
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+	<ns5:lowerCorner> </ns5:lowerCorner>
+	<ns5:upperCorner> </ns5:upperCorner>
+	<ns5:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://gla.gov.uk/topics#d90e3271-732e-43ab-aa2c-774b185e70e9">
+	<rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+	<ns2:prefLabel xml:lang="en">Health</ns2:prefLabel>
+	<ns2:scopeNote xml:lang="en">Health</ns2:scopeNote>
+	<ns5:BoundedBy rdf:nodeID="node1drarqav0x1"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1drarqav0x1">
+	<rdf:type rdf:resource="http://www.opengis.net/gml#Envelope"/>
+	<ns5:lowerCorner> </ns5:lowerCorner>
+	<ns5:upperCorner> </ns5:upperCorner>
+	<ns5:srsName rdf:resource="http://www.opengis.net/gml/srs/epsg.xml#epsg:4326"/>
+</rdf:Description>
+
+</rdf:RDF>
