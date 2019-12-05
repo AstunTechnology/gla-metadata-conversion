@@ -22,7 +22,7 @@ Create a harvester of type **OGC Web Services** with the following options:
 * Validate records before import: should be set to "Accept all metadata without validation"
 * XSL transformation to apply: should be blank
 
-## Running as a batch process directive (currently recommended)
+## Running as a batch process directive
 
 ### Basic setup
 
