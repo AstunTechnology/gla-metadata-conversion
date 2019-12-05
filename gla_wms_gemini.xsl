@@ -266,9 +266,12 @@
          <xsl:message>===Updating keywords with tags===</xsl:message>
          <gmd:descriptiveKeywords>
              <gmd:MD_Keywords>
-                 <gmd:keyword>
-                     <gco:CharacterString><xsl:value-of select="$tags" /></gco:CharacterString>
-                 </gmd:keyword>
+                 <xsl:for-each select="tokenize(substring-before(substring-after($tags,'['),']'), ';')">
+                     <xsl:variable name="tag" select="."/>
+                    <gmd:keyword>
+                        <gco:CharacterString><xsl:value-of select="$tag" /></gco:CharacterString>
+                    </gmd:keyword>
+                 </xsl:for-each>
                  <gmd:type>
                      <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
                          codeListValue="theme"/>
@@ -303,9 +306,12 @@
          <gmd:descriptiveKeywords>
              <xsl:message>===Updating keywords with topics===</xsl:message>
                  <gmd:MD_Keywords>
+                     <xsl:for-each select="tokenize(substring-before(substring-after($topics,'['),']'), ';')">
+                         <xsl:variable name="topic" select="."/>
                      <gmd:keyword>
-                         <gco:CharacterString><xsl:value-of select="$topics" /></gco:CharacterString>
+                         <gco:CharacterString><xsl:value-of select="$topic" /></gco:CharacterString>
                      </gmd:keyword>
+                     </xsl:for-each>
                      <gmd:type>
                          <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_KeywordTypeCode"
                              codeListValue="theme"/>
