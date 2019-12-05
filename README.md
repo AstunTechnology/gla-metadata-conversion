@@ -1,4 +1,4 @@
-#GLA WMS to Gemini Conversion
+# GLA WMS to Gemini Conversion
 
 ## How to install
 
