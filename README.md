@@ -2,12 +2,13 @@
 
 ## How to install
 
-Clone or otherwise download this repository and extract `gla_wms_gemini.xsl`. Place it the following location:
+Clone or otherwise download this repository and extract `gla_wms_gemini.xsl`. Place it the following location (relative to either the `schema_plugins` folder if deploying in a war file, or `schemas\iso19139.gemini23\src\main\plugin` if running using jetty):
 
-* `iso19139\process`
+* `iso19139.gemini23\process`
 
 ## Setting up the harvest
 
+In settings, set "Allow editing on harvested records" and save.
 Create a harvester of type **OGC Web Services** with the following options:
 
 * Node name and logo: the name will appear in the "Provided By" search facet in the editor/contribute tab. The logo will appear on the records
@@ -18,7 +19,7 @@ Create a harvester of type **OGC Web Services** with the following options:
 * Import record for each layer using MetadataURL attributes should be ticked
 * Leave templates blank (for now at least)
 * Create Thumbnail: can be ticked
-* Output schema: iso19139
+* Output schema: iso19139.gemini23
 * Validate records before import: should be set to "Accept all metadata without validation"
 * XSL transformation to apply: should be blank
 

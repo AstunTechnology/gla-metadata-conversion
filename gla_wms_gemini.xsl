@@ -10,7 +10,6 @@
     xmlns:gts="http://www.isotc211.org/2005/gts"
     xmlns:gsr="http://www.isotc211.org/2005/gsr"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns="http://www.isotc211.org/2005/gmd"
     xmlns:geonet="http://www.fao.org/geonetwork" version="2.0">
 
     <!--This script should be used as a post-processing step when harvesting metadata from the GLA ESRI ArcServer instance. -->
@@ -91,15 +90,10 @@
         </xsl:copy>
     </xsl:template>-->
     
-    <xsl:template match="gmd:topicCategory">
-        <xsl:message>===Hard-coding TopicCategory for now===</xsl:message>
-        <gmd:topicCategory>
-            <gmd:MD_TopicCategoryCode>Location</gmd:MD_TopicCategoryCode>
-        </gmd:topicCategory>
-    </xsl:template>
+    
     
     <xsl:template match="gmd:contact">
-        <xsl:message>===Updating contact with maintainer details===</xsl:message>
+        <xsl:message>===gmd:contact template===</xsl:message>
         <xsl:variable name="maintainer">
             <xsl:for-each select="tokenize($messyabstract, '\|')">
                 <xsl:if test="substring-before(.,':')='maintainer'">
@@ -151,7 +145,7 @@
 
 
     <xsl:template match="gmd:MD_DataIdentification" name="DataID">
-        
+        <xsl:message>===gmd:MD_DataIdentification Template===</xsl:message>
         <xsl:variable name="description">
             <xsl:for-each select="tokenize($messyabstract, '\|')">
                 <xsl:if test="substring-before(.,':')='description'">
@@ -346,21 +340,35 @@
         <xsl:copy-of select="gmd:resourceSpecificUsage" />
          <xsl:message>===Updating licence===</xsl:message>
          <gmd:resourceConstraints>
-             <gmd:MD_LegalConstraints>
-                 <gmd:useConstraints>
-                     <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
-                         codeListValue="otherRestrictions"/>
-                 </gmd:useConstraints>
-                 <gmd:otherConstraints>
-                     <gmx:Anchor xlink:href="https://os.uk/business/licences/index.html">Licence: <xsl:value-of select="$licence" /></gmx:Anchor>
-                 </gmd:otherConstraints>
-             </gmd:MD_LegalConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:accessConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="otherRestrictions"/>
+               </gmd:accessConstraints>
+               <gmd:otherConstraints>
+                  <gmx:Anchor xlink:href="http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations">no limitations</gmx:Anchor>
+               </gmd:otherConstraints>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <gmd:resourceConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:useConstraints>
+                  <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="otherRestrictions"/>
+               </gmd:useConstraints>
+               <gmd:otherConstraints>
+                  <gco:CharacterString>Licence: <xsl:value-of select="$licence" /></gco:CharacterString>
+               </gmd:otherConstraints>
+            </gmd:MD_LegalConstraints>
          </gmd:resourceConstraints>
         <xsl:copy-of select="gmd:aggregationInfo" />
         <xsl:copy-of select="gmd:spatialRepresentationType" />
         <xsl:copy-of select="gmd:spatialResolution" />
         <xsl:copy-of select="gmd:language" />
         <xsl:copy-of select="gmd:characterSet" />
+        <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>location</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
         <xsl:copy-of select="gmd:environmentDescription" />
         <xsl:copy-of select="gmd:extent" />
          <gmd:supplementalInformation>
