@@ -63,7 +63,7 @@
                          <gmd:onlineResource>
                              <gmd:CI_OnlineResource>
                                  <gmd:linkage>
-                                     <gmd:URL>https://gla.gov.uk</gmd:URL>
+                                     <gmd:URL>https://www.london.gov.uk</gmd:URL>
                                  </gmd:linkage>
                                  <gmd:description>
                                      <gco:CharacterString>GLA Website</gco:CharacterString>
@@ -126,7 +126,7 @@
                         <gmd:onlineResource>
                             <gmd:CI_OnlineResource>
                                 <gmd:linkage>
-                                    <gmd:URL>https://gla.gov.uk</gmd:URL>
+                                    <gmd:URL>https://www.london.gov.uk</gmd:URL>
                                 </gmd:linkage>
                                 <gmd:description>
                                     <gco:CharacterString>GLA Website</gco:CharacterString>
@@ -232,7 +232,7 @@
                          <gmd:onlineResource>
                              <gmd:CI_OnlineResource>
                                  <gmd:linkage>
-                                     <gmd:URL>https://gla.gov.uk</gmd:URL>
+                                     <gmd:URL>https://www.london.gov.uk</gmd:URL>
                                  </gmd:linkage>
                                  <gmd:description>
                                      <gco:CharacterString>GLA Website</gco:CharacterString>
