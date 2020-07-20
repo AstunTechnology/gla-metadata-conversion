@@ -19,6 +19,23 @@
     <!-- declare abstract variable in advance --> 
     <xsl:variable name="messyabstract" select="//gmd:abstract/gco:CharacterString"/>
 
+    <!-- placeholder variables in case information isn't provided -->
+    <xsl:variable name="defaultlicense" select="'Open Government Licence'"/>
+    <xsl:variable name="defaultauthor" select="'GLA GIS Team'"/>
+    <xsl:variable name="defaultauthor_email" select="'gis@london.gov.uk'"/>
+    <xsl:variable name="defaultmaintainer" select="'GLA GIS Team'"/>
+    <xsl:variable name="defaultmaintainer_email" select="'gis@london.gov.uk'"/>
+    <xsl:variable name="defaultdescription" select="'This is a MapLondon dataset. This abstract needs to be 100 characters long for full Gemini 2.3 validity'"/>
+    <xsl:variable name="defaultupdatefrequency" select="'unknown'"/>
+    <xsl:variable name="defaulttags" select="'London'"/>
+    <xsl:variable name="defaulttopics" select="'London'"/>
+    <xsl:variable name="defaultsmallestgeography" select="'Variable'"/>
+    <xsl:variable name="defaultwebsite" select="'https://gla.gov.uk'"/>
+    <xsl:variable name="defaultwebsite_description" select="'Greater London Authority Website'"/>
+
+    
+
+
     <xsl:template match="/root">
         <xsl:apply-templates select="gmd:*"/>
 
@@ -112,24 +129,39 @@
         <gmd:contact>
             <gmd:CI_ResponsibleParty>
                 <gmd:organisationName>
-                    <gco:CharacterString><xsl:value-of select="$maintainer" /></gco:CharacterString>
+                    <xsl:choose>
+                    <xsl:when test="$maintainer">
+                        <gco:CharacterString><xsl:value-of select="$maintainer" /></gco:CharacterString>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <gco:CharacterString><xsl:value-of select="$defaultmaintainer" /></gco:CharacterString>
+                    </xsl:otherwise>
+                </xsl:choose>
+
                 </gmd:organisationName>
                 <gmd:contactInfo>
                     <gmd:CI_Contact>
                         <gmd:address>
                             <gmd:CI_Address>
                                 <gmd:electronicMailAddress>
-                                    <gco:CharacterString><xsl:value-of select="$maintainer_email"/></gco:CharacterString>
+                                    <xsl:choose>
+                                        <xsl:when test="$maintainer_email">
+                                            <gco:CharacterString><xsl:value-of select="$maintainer_email"/></gco:CharacterString>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <gco:CharacterString><xsl:value-of select="$defaultmaintainer_email"/></gco:CharacterString>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
                                 </gmd:electronicMailAddress>
                             </gmd:CI_Address>
                         </gmd:address>
                         <gmd:onlineResource>
                             <gmd:CI_OnlineResource>
                                 <gmd:linkage>
-                                    <gmd:URL>https://gla.gov.uk</gmd:URL>
+                                    <gmd:URL><xsl:value-of select="$defaultwebsite"/></gmd:URL>
                                 </gmd:linkage>
                                 <gmd:description>
-                                    <gco:CharacterString>GLA Website</gco:CharacterString>
+                                    <gco:CharacterString><xsl:value-of select="$defaultwebsite_description"/></gco:CharacterString>
                                 </gmd:description>
                             </gmd:CI_OnlineResource>
                         </gmd:onlineResource>
@@ -210,7 +242,15 @@
         <xsl:copy-of select="gmd:citation" />
          <xsl:message>===Abstract with description element===</xsl:message>
          <gmd:abstract>
-              <gco:CharacterString><xsl:value-of select="$description" /></gco:CharacterString>             
+            <xsl:choose>
+                <xsl:when test="$description">
+              <gco:CharacterString><xsl:value-of select="$description" /></gco:CharacterString> 
+              </xsl:when>
+              <xsl:otherwise>
+                <gco:CharacterString><xsl:value-of select="$defaultdescription" /></gco:CharacterString>
+            </xsl:otherwise>
+        </xsl:choose>
+
          </gmd:abstract>
         <xsl:copy-of select="gmd:purpose" />
         <xsl:copy-of select="gmd:credit" />
@@ -218,24 +258,40 @@
          <gmd:pointOfContact>
              <gmd:CI_ResponsibleParty>
                  <gmd:organisationName>
+                    <xsl:choose>
+                        <xsl:when test="$author">
                      <gco:CharacterString><xsl:value-of select="$author"/></gco:CharacterString>
+                    </xsl:when>
+                    <xsl:otherwise>
+                         <gco:CharacterString><xsl:value-of select="$defaultauthor"/></gco:CharacterString>
+                    </xsl:otherwise>
+                </xsl:choose>
+
                  </gmd:organisationName>
                  <gmd:contactInfo>
                      <gmd:CI_Contact>
                          <gmd:address>
                              <gmd:CI_Address>
                                  <gmd:electronicMailAddress>
+                                    <xsl:choose>
+                                        <xsl:when test="$author_email">
                                      <gco:CharacterString><xsl:value-of select="$author_email"/></gco:CharacterString>
+                                        </xsl:when>
+                                        <xsl:otherwise>
+                                            <gco:CharacterString><xsl:value-of select="$author_email"/></gco:CharacterString>
+                                        </xsl:otherwise>
+                                    </xsl:choose>
+
                                  </gmd:electronicMailAddress>
                              </gmd:CI_Address>
                          </gmd:address>
                          <gmd:onlineResource>
                              <gmd:CI_OnlineResource>
                                  <gmd:linkage>
-                                     <gmd:URL>https://gla.gov.uk</gmd:URL>
+                                     <gmd:URL><xsl:value-of select="$defaultwebsite"/></gmd:URL>
                                  </gmd:linkage>
                                  <gmd:description>
-                                     <gco:CharacterString>GLA Website</gco:CharacterString>
+                                     <gco:CharacterString><xsl:value-of select="$defaultwebsite_description"/></gco:CharacterString>
                                  </gmd:description>
                              </gmd:CI_OnlineResource>
                          </gmd:onlineResource>
@@ -357,7 +413,15 @@
                                           codeListValue="otherRestrictions"/>
                </gmd:useConstraints>
                <gmd:otherConstraints>
+                <xsl:choose>
+                    <xsl:when test="$licence">
                   <gco:CharacterString>Licence: <xsl:value-of select="$licence" /></gco:CharacterString>
+              </xsl:when>
+              <xsl:otherwise>
+                <gco:CharacterString>Licence: <xsl:value-of select="$defaultlicense" /></gco:CharacterString>
+            </xsl:otherwise>
+        </xsl:choose>
+
                </gmd:otherConstraints>
             </gmd:MD_LegalConstraints>
          </gmd:resourceConstraints>
@@ -373,7 +437,15 @@
         <xsl:copy-of select="gmd:extent" />
          <gmd:supplementalInformation>
              <xsl:message>===Updating supplemental info with London Smallest Geography===</xsl:message>
+             <xsl:choose>
+                <xsl:when test="$london_smallest_geography">
              <gco:CharacterString>London Smallest Geography: <xsl:value-of select="$london_smallest_geography" /></gco:CharacterString>
+         </xsl:when>
+         <xsl:otherwise>
+             <gco:CharacterString>London Smallest Geography: <xsl:value-of select="$defaultsmallestgeography" /></gco:CharacterString>
+        </xsl:otherwise>
+    </xsl:choose>
+
          </gmd:supplementalInformation>
         </xsl:copy>
  
